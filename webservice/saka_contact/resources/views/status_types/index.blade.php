@@ -1,21 +1,17 @@
-<a href="{{URL::to('companies/add')}}">Add New</a>
+<a href="{{URL::to('status_types/add')}}">Add New</a>
 <table border='1'>
 	<tr>
 		<th>Id.</th>
-		<th>Name</th>
-		<th>Address</th>
-		<th>Token</th>
+		<th>Nama</th>
 		<th>Action</th>
 	</tr>
-	@foreach($data as $company)
+	@foreach($data as $status_types)
 	<tr>
-		<th>{{$company->id}}</th>
-		<th>{{$company->name}}</th>
-		<th>{{$company->address}}</th>
-		<th>{{$company->token}}</th>
+		<th>{{$status_types->id}}</th>
+		<th>{{$status_types->name}}</th>
 		<th>
-		<a href="{{URL::to('companies/update/'.$company->id)}}">Update</a>
-		<a href="#" class="delete" id="{{$company->id}}">Delete</a>
+		<a href="{{URL::to('status_types/update/'.$status_types->id)}}">Update</a>
+		<a href="#" class="delete" id="{{$status_types->id}}">Delete</a>
 		</th>
 	</tr>	
 	@endforeach
@@ -31,7 +27,7 @@
 		if (ask)
 		{
 			$.ajax({
-				url : "{{URL::to('companies/delete')}}/"+id,
+				url : "{{URL::to('status_types/delete')}}/"+id,
 				type : "DELETE",
 				data: {"_token":"{{csrf_token()}}"},
 				success:function(){

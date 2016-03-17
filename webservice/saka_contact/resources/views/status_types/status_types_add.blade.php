@@ -21,16 +21,6 @@
 			<td>:</td>
 			<td><input name="name" value="{{old('name')}}"></td>
 		</tr>
-		<tr>
-			<td>Address</td>
-			<td>:</td>
-			<td><textarea name="address">{{old('address')}}</textarea></td>
-		</tr>
-		<tr>
-			<td>Token</td>
-			<td>:</td>
-			<td><input name="token" value="{{old('token')}}"></td>
-		</tr>
 	</table>
 	<input type="submit" name="Submit">
 	<input type="reset" name="Reset">

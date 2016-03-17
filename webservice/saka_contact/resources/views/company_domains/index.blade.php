@@ -1,21 +1,19 @@
-<a href="{{URL::to('companies/add')}}">Add New</a>
+<a href="{{URL::to('company_domains/add')}}">Add New</a>
 <table border='1'>
 	<tr>
 		<th>Id.</th>
-		<th>Name</th>
-		<th>Address</th>
-		<th>Token</th>
+		<th>Companies</th>
+		<th>Domain</th>
 		<th>Action</th>
 	</tr>
-	@foreach($data as $company)
+	@foreach($data as $company_domains)
 	<tr>
-		<th>{{$company->id}}</th>
-		<th>{{$company->name}}</th>
-		<th>{{$company->address}}</th>
-		<th>{{$company->token}}</th>
+		<th>{{$company_domains->id}}</th>
+		<th>{{$company_domains->Companies->name}}</th>
+		<th>{{$company_domains->domain}}</th>
 		<th>
-		<a href="{{URL::to('companies/update/'.$company->id)}}">Update</a>
-		<a href="#" class="delete" id="{{$company->id}}">Delete</a>
+		<a href="{{URL::to('company_domains/update/'.$company_domains->id)}}">Update</a>
+		<a href="#" class="delete" id="{{$company_domains->id}}">Delete</a>
 		</th>
 	</tr>	
 	@endforeach
@@ -31,7 +29,7 @@
 		if (ask)
 		{
 			$.ajax({
-				url : "{{URL::to('companies/delete')}}/"+id,
+				url : "{{URL::to('company_domains/delete')}}/"+id,
 				type : "DELETE",
 				data: {"_token":"{{csrf_token()}}"},
 				success:function(){
