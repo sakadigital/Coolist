@@ -18,7 +18,7 @@ return [
     | namespace for your api location, we recomend use App/Api
     */
     
-    'namespace' => 'App\Http\Controllers',
+    'namespace' => 'App\Api',
 
     /*
     |--------------------------------------------------------------------------
@@ -89,7 +89,7 @@ return [
     */
 
     'documentation' => true,
-    'project_name' => 'Sakadigital Project',
+    'project_name' => 'Contact Sakadigital',
     'project_description' => 'this is project sakadigital',
 
     /*
