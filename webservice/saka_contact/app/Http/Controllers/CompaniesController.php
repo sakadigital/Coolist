@@ -64,7 +64,8 @@ class CompaniesController extends Controller
 		$companies->token = $request->token;
 		$companies->save();
 
-		return Response::json("success insert with id : ".$companies->id);
+		// return Response::json("success insert with id : ".$companies->id);
+		return redirect('companies/');
 	}
 
 	/**
@@ -113,7 +114,8 @@ class CompaniesController extends Controller
 		$companies->token = $request->token;
 		$companies->save();
 
-		return Response::json("success update data with id : ".$companies->id);
+		//return Response::json("success update data with id : ".$companies->id);
+		return redirect('companies/');
 	}
 
 	/**

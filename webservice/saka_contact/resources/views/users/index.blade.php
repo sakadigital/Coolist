@@ -1,66 +1,187 @@
-<a href="{{URL::to('users/add')}}">Add New</a>
-<table border='1'>
-	<tr>
-		<th>Id.</th>
-		<th>email</th>
-		<th>First Name.</th>
-		<th>Last Name</th>
-		<th>Profile Picture.</th>
-		<th>Password</th>
-		<th>Phone.</th>
-		<th>Twitter</th>
-		<th>Facebook.</th>
-		<th>Linkedin</th>
-		<th>Registered.</th>
-		<th>Roles</th>
-		<th>Companies</th>
-		<th>Status Types</th>
-		<th>status Description</th>
-		<th>Action</th>
-	</tr>
-	@foreach($data as $users)
-	<tr>
-		<th>{{$users->id}}</th>
-		<th>{{$users->email}}</th>
-		<th>{{$users->first_name}}</th>
-		<th>{{$users->last_name}}</th>
-		<th><img src="{{$users->profile_picture}}" width="50" height="50"/></th>
-		<th>{{$users->password}}</th>
-		<th>{{$users->phone}}</th>
-		<th>{{$users->twitter}}</th>
-		<th>{{$users->facebook}}</th>
-		<th>{{$users->linkedin}}</th>
-		<th>{{$users->registered}}</th>
-		<th>{{$users->Roles->name}}</th>
-		<th>{{$users->Companies->name}}</th>
-		<th>{{$users->StatusTypes->name}}</th>
-		<th>{{$users->status_description}}</th>
-		<th>
-		<a href="{{URL::to('users/update/'.$users->id)}}">Update</a>
-		<a href="#" class="delete" id="{{$users->id}}">Delete</a>
-		</th>
-	</tr>	
-	@endforeach
-</table>
+<!DOCTYPE html>
+<html lang="en">
 
-<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
-<script type="text/javascript">
-	$('.delete').click(function(e){
-		e.preventDefault();
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		var id = $(this).attr('id');
-		var ask = confirm("Anda yakin?");
-		if (ask)
-		{
-			$.ajax({
-				url : "{{URL::to('users/delete')}}/"+id,
-				type : "DELETE",
-				data: {"_token":"{{csrf_token()}}"},
-				success:function(){
-					alert('Data barhasi di hapus');
-					window.location.reload();
-				}
-			})
-		}
-	})
-</script>
+  <title>Contact Saka Digital </title>
+
+  <!-- Bootstrap core CSS -->
+
+  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+  <link href="{{ asset('fonts/css/font-awesome.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
+
+  <!-- Custom styling plus plugins -->
+  <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/maps/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet" type="text/css" />
+  <link href="{{ asset('css/icheck/flat/green.css') }}" rel="stylesheet" />
+  <link href="{{ asset('css/floatexamples.css') }}" rel="stylesheet" type="text/css" />
+
+  <script src="{{ asset('js/jquery.min.js') }}"></script>
+  <script src="{{ asset('js/nprogress.js') }}"></script>
+
+</head>
+
+
+<body class="nav-md">
+
+  <div class="container body">
+
+
+    <div class="main_container">
+
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><img class="img-responsive" src="{{ asset('images/Logo - Saka - Grey.png') }}" alt="Chania"></a>
+          </div>
+          <div class="clearfix"></div>
+
+          <!-- menu prile quick info -->
+          <!-- /menu prile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+            @include('includes.sidebar')
+          <!-- /sidebar menu -->
+
+          <!-- menu footer buttons -->
+          <!-- /menu footer buttons -->
+        </div>
+      </div>
+
+      <!-- top navigation -->
+        @include('includes.navigation')
+      <!-- /top navigation -->
+
+     <!-- page content -->
+      <div class="right_col" role="main">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3>
+                  Users
+                    <small>
+                        > List
+                    </small>
+                </h3>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Table users 
+                     <!--  <small>
+                        List all companies
+                      </small> -->
+                  </h2>           
+                  <div class="clearfix"></div>
+                 </div>
+                  <div class="x_content">
+                    <table class="table table-striped responsive-utilities jambo_table bulk_action">
+                      <thead>
+                        <tr class="headings">
+                          <th>
+                            <input type="checkbox" id="check-all" class="flat">
+                          </th>
+                          <th class="column-title">ID </th>
+                          <th class="column-title">Email </th>
+                          <th class="column-title">Fisrst Name </th>
+                          <th class="column-title">last Name </th>
+                          <th class="column-title">Profile Picture.</th>
+                          <th class="column-title">Phone </th>
+                        <!--   <th class="column-title">Twitter </th>
+                          <th class="column-title">Facebook </th>
+                          <th class="column-title">Linkedin </th> 
+                          <th class="column-title">Registered </th> -->
+                          <th class="column-title">Roles </th>
+                          <th class="column-title">Companies </th>
+                          <th class="column-title">Status Types </th>
+                          <th class="column-title">status Description</th>
+                          <th class="column-title no-link last"><span class="nobr">Action</span>
+                          </th>
+                          <th class="bulk-actions" colspan="7">
+                            <a class="antoo" style="color:#fff; font-weight:500;">Select ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                          </th>
+                        </tr>
+                      </thead>
+
+                     <tbody>
+                        @foreach($data as $users)
+                        <tr class="even pointer">
+                          <td class="a-center ">
+                            <input type="checkbox" class="flat" name="table_records">
+                          </td>
+                          <td class=" ">{{$users->id}}</td>
+                          <td class=" ">{{$users->email}}</td>
+                          <td class=" ">{{$users->first_name}}</td>
+                          <td class=" ">{{$users->last_name}}</td> 
+                          <td class=" "><img src="{{$users->profile_picture}}" width="50" height="50"/></td>
+                          <td class=" ">{{$users->phone}}</td>
+                          <!-- <td class=" ">{{$users->twitter}}</td> 
+                          <td class=" ">{{$users->facebook}}</td>
+                          <td class=" ">{{$users->linkedin}}</td>  
+                          <td class=" ">{{$users->registered}}</td> -->
+                          <td class=" ">{{$users->Roles->name}}</td> 
+                          <td class=" ">{{$users->Companies->name}}</td>
+                          <td class=" ">{{$users->StatusTypes->name}}</td>
+                          <td class=" ">{{$users->status_description}}</td>
+                          <td class=" last">
+                          <a href="{{URL::to('users/update/'.$users->id)}}" class="btn btn-primary btn-sm">Update</a>
+                          <a href="#" class="btn btn-danger btn-sm delete" id="{{$users->id}}">Delete</a>
+                          </td>
+                        </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
+
+                  </div>
+                  <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+                  <script type="text/javascript">
+                    $('.delete').click(function(e){
+                      e.preventDefault();
+
+                      var id = $(this).attr('id');
+                      var ask = confirm("Anda yakin?");
+                      if (ask)
+                      {
+                        $.ajax({
+                          url : "{{URL::to('users/delete')}}/"+id,
+                          type : "DELETE",
+                          data: {"_token":"{{csrf_token()}}"},
+                          success:function(){
+                            alert('Data barhasi di hapus');
+                            window.location.reload();
+                          }
+                        })
+                      }
+                    })
+                  </script>
+                </div>
+              </div>
+            </div>
+            <br />
+            <br />
+            <br />
+          </div>
+        </div>
+        <!-- footer content -->       
+        <!-- /footer content -->
+      </div>
+      <!-- /page content -->
+    </div>
+  </div>
+  @include('includes.footer')
+</body>
+
+</html>

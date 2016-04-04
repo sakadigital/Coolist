@@ -81,7 +81,8 @@ class UsersController extends Controller
 		$users->status_types_id = $request->status_types_id;	
 		$users->save();
 
-		return Response::json("success insert with id : ".$users->id);
+		//return Response::json("success insert with id : ".$users->id);
+		return redirect('users/');
 	}
 	/**
 	 * Handle process request getUpdate
@@ -153,7 +154,8 @@ class UsersController extends Controller
 		$users->status_description = $request->status_description;	
 		$users->save();
 
-		return Response::json("success Update data with id : ".$users->id);
+		//return Response::json("success Update data with id : ".$users->id);
+		return redirect('users/');
 	}
 
 	/**

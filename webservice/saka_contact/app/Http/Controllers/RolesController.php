@@ -59,7 +59,8 @@ class RolesController extends Controller
 		$roles->name = $request->name;
 		$roles->save();
 
-		return Response::json("success insert with id : ".$roles->id);
+		//return Response::json("success insert with id : ".$roles->id);
+		return redirect('roles/');
 	}
 	/**
 	 * Handle process request getUpdate
@@ -103,7 +104,9 @@ class RolesController extends Controller
 		$roles->name = $request->name;
 		$roles->save();
 
-		return Response::json("success update data with id : ".$roles->id);
+		//return Response::json("success update data with id : ".$roles->id);
+		return redirect('roles/');
+
 	}
 
 	/**

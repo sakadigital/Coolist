@@ -35,6 +35,7 @@ class CompanyDomainsController extends Controller
 
 	public function postAdd(Request $request)
 	{
+		
 		$validate = Validator::make($request->all(), [
     		'id'			=> 'required|numeric|unique:company_domains,id',
     		'companies_id'	=> 'required',
@@ -54,7 +55,8 @@ class CompanyDomainsController extends Controller
 		$company_domains->domain = $request->domain;	
 		$company_domains->save();
 
-		return Response::json("success insert with id : ".$company_domains->id);
+		//return Response::json("success insert with id : ".$company_domains->id);
+		return redirect('company_domains/');
 	}
 	/**
 	 * Handle process request getUpdate
@@ -101,7 +103,8 @@ class CompanyDomainsController extends Controller
 		$company_domains->domain = $request->domain;
 		$company_domains->save();
 
-		return Response::json("success Update data with id : ".$company_domains->id);
+		//return Response::json("success Update data with id : ".$company_domains->id);
+		return redirect('company_domains/');
 	}
 
 	/**

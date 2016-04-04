@@ -59,7 +59,8 @@ class StatusTypesController extends Controller
 		$status_types->name = $request->name;
 		$status_types->save();
 
-		return Response::json("success insert with id : ".$status_types->id);
+		//return Response::json("success insert with id : ".$status_types->id);
+		return redirect('status_types/');
 	}
 	/**
 	 * Handle process request getUpdate
@@ -103,7 +104,8 @@ class StatusTypesController extends Controller
 		$status_types->name = $request->name;
 		$status_types->save();
 
-		return Response::json("success update data with id : ".$status_types->id);
+		//return Response::json("success update data with id : ".$status_types->id);
+		return redirect('status_types/');
 	}
 
 	/**
