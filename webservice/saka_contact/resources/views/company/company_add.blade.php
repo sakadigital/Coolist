@@ -14,7 +14,7 @@
         <div class="left_col scroll-view">
 
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><img class="img-responsive" src="{{ asset('images/Logo - Saka - Grey.png') }}" alt="Chania"></a>
+            <a href="#" class="site_title"><img class="img-responsive" src="{{ asset('images/Logo - Saka - Grey.png') }}" alt="Chania"></a>
           </div>
           <div class="clearfix"></div>
 
