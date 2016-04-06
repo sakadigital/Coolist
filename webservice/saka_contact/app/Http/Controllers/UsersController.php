@@ -61,7 +61,7 @@ class UsersController extends Controller
     	if ($validate->fails())
 		{
 			//return Response::json($validate->errors()->all());
-			return redirect('users/add')->withErrors($validate)->withInput($request->all());
+			return redirect('dashboard/users/add')->withErrors($validate)->withInput($request->all());
 		}
 
 		$users = new Users;
@@ -78,11 +78,12 @@ class UsersController extends Controller
 		$users->registered 		= $request->registered;
 		$users->roles_id 		= $request->roles_id;
 		$users->companies_id 	= $request->companies_id;
-		$users->status_types_id = $request->status_types_id;	
+		$users->status_types_id = $request->status_types_id;
+		$users->status_description = $request->status_description;		
 		$users->save();
 
 		//return Response::json("success insert with id : ".$users->id);
-		return redirect('users/');
+		return redirect('dashboard/users/');
 	}
 	/**
 	 * Handle process request getUpdate
@@ -135,7 +136,7 @@ class UsersController extends Controller
 		if ($validate->fails())
 		{
 			//return Response::json($validate->errors()->all());
-			return redirect('users/update/'.$id)->withErrors($validate)->withInput($request->all());
+			return redirect('dashboard/users/update/'.$id)->withErrors($validate)->withInput($request->all());
 		}
 
 		$users->email			= $request->email;
@@ -155,7 +156,7 @@ class UsersController extends Controller
 		$users->save();
 
 		//return Response::json("success Update data with id : ".$users->id);
-		return redirect('users/');
+		return redirect('dashboard/users/');
 	}
 
 	/**

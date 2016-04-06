@@ -87,7 +87,7 @@
                           <td class=" ">{{$company_domains->Companies->name}}</td>
                           <td class=" ">{{$company_domains->domain}}</td>
                           <td class=" last">
-                          <a href="{{URL::to('company_domains/update/'.$company_domains->id)}}" class="btn btn-primary btn-sm">Update</a>
+                          <a href="{{URL::to('dashboard/company_domains/update/'.$company_domains->id)}}" class="btn btn-primary btn-sm">Update</a>
                           <a href="#" class="btn btn-danger btn-sm delete" id="{{$company_domains->id}}">Delete</a>
                           </td>
                         </tr>
@@ -106,7 +106,7 @@
                       if (ask)
                       {
                         $.ajax({
-                          url : "{{URL::to('company_domains/delete')}}/"+id,
+                          url : "{{URL::to('dashboard/company_domains/delete')}}/"+id,
                           type : "DELETE",
                           data: {"_token":"{{csrf_token()}}"},
                           success:function(){

@@ -50,7 +50,7 @@ class StatusTypesController extends Controller
 		if ($validate->fails())
 		{
 			//return Response::json($validate->errors()->all());
-			return redirect('status_types/add')->withErrors($validate)->withInput($request->all());
+			return redirect('dashboard/status_types/add')->withErrors($validate)->withInput($request->all());
 
 		}
 
@@ -60,7 +60,7 @@ class StatusTypesController extends Controller
 		$status_types->save();
 
 		//return Response::json("success insert with id : ".$status_types->id);
-		return redirect('status_types/');
+		return redirect('dashboard/status_types/');
 	}
 	/**
 	 * Handle process request getUpdate
@@ -98,14 +98,14 @@ class StatusTypesController extends Controller
 		if ($validate->fails())
 		{
 			//return Response::json($validate->errors()->all());
-			return redirect('status_types/update/'.$id)->withErrors($validate)->withInput($request->all());
+			return redirect('dashboard/status_types/update/'.$id)->withErrors($validate)->withInput($request->all());
 		}
 
 		$status_types->name = $request->name;
 		$status_types->save();
 
 		//return Response::json("success update data with id : ".$status_types->id);
-		return redirect('status_types/');
+		return redirect('dashboard/status_types/');
 	}
 
 	/**

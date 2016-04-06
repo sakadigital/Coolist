@@ -775,10 +775,10 @@ li.current-page a {
     overflow: hidden;
     font-weight: 400;
     font-size: 22px;
-    width: 130%;
+    width: 70%;
     color: #ECF0F1 !important;
-    margin-left: -40px !important;
-    margin-top: -40px !important;
+    margin-left: 25px !important;
+    margin-top: 10px !important;
     line-height: 59px;
     display: block;
     height: 110px;

@@ -85,7 +85,7 @@
                           <td class=" ">{{$roles->id}}</td>
                           <td class=" ">{{$roles->name}}</td>
                           <td class=" last">
-                          <a href="{{URL::to('roles/update/'.$roles->id)}}" class="btn btn-primary btn-sm">Update</a>
+                          <a href="{{URL::to('dashboard/roles/update/'.$roles->id)}}" class="btn btn-primary btn-sm">Update</a>
                           <a href="#" class="btn btn-danger btn-sm delete" id="{{$roles->id}}">Delete</a>
                           </td>
                         </tr>
@@ -104,7 +104,7 @@
                       if (ask)
                       {
                         $.ajax({
-                          url : "{{URL::to('roles/delete')}}/"+id,
+                          url : "{{URL::to('dashboard/roles/delete')}}/"+id,
                           type : "DELETE",
                           data: {"_token":"{{csrf_token()}}"},
                           success:function(){

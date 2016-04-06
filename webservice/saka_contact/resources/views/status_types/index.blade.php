@@ -85,7 +85,7 @@
                           <td class=" ">{{$status_types->id}}</td>
                           <td class=" ">{{$status_types->name}}</td>
                           <td class=" last">
-                          <a href="{{URL::to('status_types/update/'.$status_types->id)}}" class="btn btn-primary btn-sm">Update</a>
+                          <a href="{{URL::to('dashboard/status_types/update/'.$status_types->id)}}" class="btn btn-primary btn-sm">Update</a>
                           <a href="#" class="btn btn-danger btn-sm delete" id="{{$status_types->id}}">Delete</a>
                           </td>
                         </tr>
@@ -104,7 +104,7 @@
                       if (ask)
                       {
                         $.ajax({
-                          url : "{{URL::to('status_types/delete')}}/"+id,
+                          url : "{{URL::to('dashboard/status_types/delete')}}/"+id,
                           type : "DELETE",
                           data: {"_token":"{{csrf_token()}}"},
                           success:function(){

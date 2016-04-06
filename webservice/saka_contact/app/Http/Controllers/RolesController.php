@@ -50,7 +50,7 @@ class RolesController extends Controller
 		if ($validate->fails())
 		{
 			//return Response::json($validate->errors()->all());
-			return redirect('roles/add')->withErrors($validate)->withInput($request->all());
+			return redirect('dashboard/roles/add')->withErrors($validate)->withInput($request->all());
 
 		}
 
@@ -60,7 +60,7 @@ class RolesController extends Controller
 		$roles->save();
 
 		//return Response::json("success insert with id : ".$roles->id);
-		return redirect('roles/');
+		return redirect('dashboard/roles/');
 	}
 	/**
 	 * Handle process request getUpdate
@@ -98,14 +98,14 @@ class RolesController extends Controller
 		if ($validate->fails())
 		{
 			//return Response::json($validate->errors()->all());
-			return redirect('roles/update/'.$id)->withErrors($validate)->withInput($request->all());
+			return redirect('dashboard/roles/update/'.$id)->withErrors($validate)->withInput($request->all());
 		}
 
 		$roles->name = $request->name;
 		$roles->save();
 
 		//return Response::json("success update data with id : ".$roles->id);
-		return redirect('roles/');
+		return redirect('dashboard/roles/');
 
 	}
 

@@ -53,7 +53,7 @@ class CompaniesController extends Controller
 		if ($validate->fails())
 		{
 			//return Response::json($validate->errors()->all());
-			return redirect('companies/add')->withErrors($validate)->withInput($request->all());
+			return redirect('dashboard/companies/add')->withErrors($validate)->withInput($request->all());
 
 		}
 
@@ -65,7 +65,7 @@ class CompaniesController extends Controller
 		$companies->save();
 
 		// return Response::json("success insert with id : ".$companies->id);
-		return redirect('companies/');
+		return redirect('dashboard/companies/');
 	}
 
 	/**
@@ -106,7 +106,7 @@ class CompaniesController extends Controller
 		if ($validate->fails())
 		{
 			//return Response::json($validate->errors()->all());
-			return redirect('companies/update/'.$id)->withErrors($validate)->withInput($request->all());
+			return redirect('dashboard/companies/update/'.$id)->withErrors($validate)->withInput($request->all());
 		}
 
 		$companies->name = $request->name;
@@ -115,7 +115,7 @@ class CompaniesController extends Controller
 		$companies->save();
 
 		//return Response::json("success update data with id : ".$companies->id);
-		return redirect('companies/');
+		return redirect('dashboard/companies/');
 	}
 
 	/**

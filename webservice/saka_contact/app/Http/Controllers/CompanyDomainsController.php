@@ -45,7 +45,7 @@ class CompanyDomainsController extends Controller
     	if ($validate->fails())
 		{
 			//return Response::json($validate->errors()->all());
-			return redirect('company_domains/add')->withErrors($validate)->withInput($request->all());
+			return redirect('dashboard/company_domains/add')->withErrors($validate)->withInput($request->all());
 
 		}
 
@@ -56,7 +56,7 @@ class CompanyDomainsController extends Controller
 		$company_domains->save();
 
 		//return Response::json("success insert with id : ".$company_domains->id);
-		return redirect('company_domains/');
+		return redirect('dashboard/company_domains/');
 	}
 	/**
 	 * Handle process request getUpdate
@@ -96,7 +96,7 @@ class CompanyDomainsController extends Controller
 		if ($validate->fails())
 		{
 			//return Response::json($validate->errors()->all());
-			return redirect('company_domains/update/'.$id)->withErrors($validate)->withInput($request->all());
+			return redirect('dashboard/company_domains/update/'.$id)->withErrors($validate)->withInput($request->all());
 		}
 
 		$company_domains->companies_id = $request->companies_id;
@@ -104,7 +104,7 @@ class CompanyDomainsController extends Controller
 		$company_domains->save();
 
 		//return Response::json("success Update data with id : ".$company_domains->id);
-		return redirect('company_domains/');
+		return redirect('dashboard/company_domains/');
 	}
 
 	/**
