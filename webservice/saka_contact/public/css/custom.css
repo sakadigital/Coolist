@@ -1,3 +1,14 @@
+.title{
+    padding: 10px 25px;
+    color: #73879C;
+    font-weight: bold;
+    font-size: 20px;
+}
+.title small{
+    font-weight: normal;
+}
+.pull-right { float: right!important; 
+}
 body.nav-sm .container.body .left_col {
     width: 70px;
     padding: 0;

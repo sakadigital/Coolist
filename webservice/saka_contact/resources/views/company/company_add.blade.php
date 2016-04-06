@@ -13,9 +13,7 @@
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
 
-          <div class="navbar nav_title" style="border: 0;">
-            <a href="#" class="site_title"><img class="img-responsive" src="{{ asset('images/Logo - Saka - Grey.png') }}" alt="Chania"></a>
-          </div>
+          @include('includes.navtitle')
           <div class="clearfix"></div>
 
           <!-- menu prile quick info -->

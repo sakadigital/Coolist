@@ -5,9 +5,9 @@
               <ul class="nav side-menu">
                 <li><a><i class="fa fa-building-o"></i> Companies <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="/companies">List</a>
+                    <li><a href="/dashboard/companies">List</a>
                     </li>
-                    <li><a href="/companies/add">Add</a>
+                    <li><a href="/dashboard/companies/add">Add</a>
                     </li>
                    <!--  <li><a href="update.html">Edit / Update</a>
                     </li>
@@ -17,9 +17,9 @@
                 </li>
                 <li><a><i class="fa fa-desktop"></i> Company Domains <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="/company_domains">List</a>
+                    <li><a href="/dashboard/company_domains">List</a>
                     </li>
-                    <li><a href="/company_domains/add">Add</a>
+                    <li><a href="/dashboard/company_domains/add">Add</a>
                     </li>
                   <!--   <li><a href="Update2.html">Edit / Update</a>
                     </li>
@@ -29,9 +29,9 @@
                 </li>
                 <li><a><i class="fa fa-list-alt"></i> Roles <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="/roles">List</a>
+                    <li><a href="/dashboard/roles">List</a>
                     </li>
-                    <li><a href="/roles/add">Add</a>
+                    <li><a href="/dashboard/roles/add">Add</a>
                     </li>
                    <!--  <li><a href="update3.html">Edit / Update</a>
                     </li>
@@ -41,9 +41,9 @@
                 </li>
                 <li><a><i class="fa fa-map-marker"></i> Status Types <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="/status_types">List</a>
+                    <li><a href="/dashboard/status_types">List</a>
                     </li>
-                    <li><a href="/status_types/add">Add</a>
+                    <li><a href="/dashboard/status_types/add">Add</a>
                     </li>
               <!--       <li><a href="update4.html">Edit / Update</a>
                     </li>
@@ -53,9 +53,9 @@
                 </li>
                 <li><a><i class="fa fa-users"></i> Users <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
-                    <li><a href="/users">List</a>
+                    <li><a href="/dashboard/users">List</a>
                     </li>
-                    <li><a href="/users/add">Add</a>
+                    <li><a href="/dashboard/users/add">Add</a>
                     </li>
                   <!--   <li><a href="update5.html">Edit / Update</a>
                     </li>
