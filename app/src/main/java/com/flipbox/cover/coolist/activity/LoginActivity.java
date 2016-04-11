@@ -116,7 +116,7 @@ public class LoginActivity extends ActionBarActivity {
         JsonArrayRequest roleReq = new JsonArrayRequest(AppConfig.URL_ROLE, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray jsonArray) {
-                Log.d("JSON", jsonArray.toString());
+                Log.d("log JSON", jsonArray.toString());
                 for(int i=0; i<jsonArray.length(); i++){
                     try {
                         JSONObject obj = jsonArray.getJSONObject(i);
